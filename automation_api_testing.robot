@@ -13,6 +13,7 @@ Login To Deriv
     Input Text    //input[@type='email']    a@besquare.com.my
     Input Text    //input[@type='password']    A
     Click Element    //button[@type='submit']
+    
 
 Check Create Button 
     Set Selenium Speed    1
