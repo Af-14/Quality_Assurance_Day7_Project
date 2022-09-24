@@ -40,44 +40,44 @@ Check Multiplier
     Click Element    //div[@class="cq-symbol-select-btn"]  
     Click Element    //div[@class="sc-mcd__item sc-mcd__item--R_50 "]   
 
-# Check multiplier value selection 
-#     Click Element  //div[@id='dropdown-display']
-#     Sleep    3
-#     Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'20')]    10
-#     Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'40')]    10
-#     Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'60')]    10
-#     Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'100')]    10
-#     Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'200')]    10
+Check multiplier value selection 
+    Click Element  //div[@id='dropdown-display']
+    Sleep    3
+    Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'20')]    10
+    Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'40')]    10
+    Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'60')]    10
+    Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'100')]    10
+    Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'200')]    10
 
-# Click on Trade types dropdown
-#     Wait Until Page Contains Element  //div[@data-testid='dt_contract_dropdown']  100
-#     Click Element  //div[@data-testid='dt_contract_dropdown']
-#     Sleep    2
-#     Wait Until Page Contains Element  //div[@class='trade-container__fieldset-header trade-container__fieldset-header--inline']  200
+Click on Trade types dropdown
+    Wait Until Page Contains Element  //div[@data-testid='dt_contract_dropdown']  100
+    Click Element  //div[@data-testid='dt_contract_dropdown']
+    Sleep    2
+    Wait Until Page Contains Element  //div[@class='trade-container__fieldset-header trade-container__fieldset-header--inline']  200
     
-# Only deal cancellation or take profit / stop loss is allowed
-#     Sleep    10
-#     Click Element  //.//span[text()='Deal cancellation']
-#     Checkbox Should Be Selected  //input[@id='dt_cancellation-checkbox_input']
-#     Sleep    2
-#     Wait Until Element Is Visible  //*[contains(text(), 'Take profit')]  50
-#     Wait Until Element Is Visible  //*[contains(text(), 'Stop loss')]  50
-#     Click Element  //*[contains(text(), 'Take profit')]
-#     Click Element  //*[contains(text(), 'Stop loss')]
-#     Checkbox Should Be Selected  //input[@id='dc_take_profit-checkbox_input']
-#     Checkbox Should Be Selected  //input[@id='dc_stop_loss-checkbox_input']
-#     Checkbox Should Not Be Selected  //input[@id='dt_cancellation-checkbox_input']
+Only deal cancellation or take profit / stop loss is allowed
+    Sleep    10
+    Click Element  //.//span[text()='Deal cancellation']
+    Checkbox Should Be Selected  //input[@id='dt_cancellation-checkbox_input']
+    Sleep    2
+    Wait Until Element Is Visible  //*[contains(text(), 'Take profit')]  50
+    Wait Until Element Is Visible  //*[contains(text(), 'Stop loss')]  50
+    Click Element  //*[contains(text(), 'Take profit')]
+    Click Element  //*[contains(text(), 'Stop loss')]
+    Checkbox Should Be Selected  //input[@id='dc_take_profit-checkbox_input']
+    Checkbox Should Be Selected  //input[@id='dc_stop_loss-checkbox_input']
+    Checkbox Should Not Be Selected  //input[@id='dt_cancellation-checkbox_input']
 
-# Check deal cancellation duration
-#     Click Element  //.//span[text()='Deal cancellation']
-#     Sleep    2
-#     Click Element  //*[@class="dc-dropdown__display dc-dropdown__display--no-border" and contains(.,'minutes') ]
-#     Sleep    3
-#     Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'5')]    10
-#     Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'10')]    10
-#     Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'15')]    10
-#     Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'30')]    10
-#     Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'60')]    10
+Check deal cancellation duration
+    Click Element  //.//span[text()='Deal cancellation']
+    Sleep    2
+    Click Element  //*[@class="dc-dropdown__display dc-dropdown__display--no-border" and contains(.,'minutes') ]
+    Sleep    3
+    Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'5')]    10
+    Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'10')]    10
+    Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'15')]    10
+    Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'30')]    10
+    Wait Until Page Contains Element    //div[@data-testid="dti_list_item" and contains(.,'60')]    10 
 
 Check single click
     Sleep    5
@@ -88,24 +88,3 @@ Check single click
     Wait Until Page Contains Element    //*[@class="dc-input-wrapper__input input--has-inline-prefix input trade-container__input" and contains(.,'10')]    10
 
 
-# Key points:
-
-# a. Only stake is allowed. Should not have payout option
-
-# b. Only deal cancellation or take profit/stop loss is allowed
-
-# c. Multiplier value selection should have x20, x40, x60, x100, x200
-
-# d. Deal cancellation fee should correlate with the stake value (e.g. deal cancellation fee is more
-# expensive when the stake is higher)
-
-# e. Maximum stake is 2000 USD
-
-# f. Minimum stake is 1 USD
-
-# g. Single click on plus (+) button of take profit field should increase the take profit value by 1 USD
-
-# h. Single click on minus (-) button of take profit field should decrease the take profit value by 1
-# USD
-
-# i. Deal cancellation duration only has these options: 5, 10, 15, 30 and 60 min  
